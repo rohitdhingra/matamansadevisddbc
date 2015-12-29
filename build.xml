@@ -61,7 +61,7 @@
         <delete dir="WebContent/WEB-INF/classes"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project,package" name="build"/>
+    <target depends="build-subprojects,build-project,package,deploy" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
@@ -71,9 +71,20 @@
         </javac>
     </target>
 	<target name="package">
-		<war destfile="build/MataMansaDeviSDBC.war" webxml="WebContent/WEB-INF/web.xml">
+		<war destfile="build/${war.filename}" webxml="WebContent/WEB-INF/web.xml">
 			<fileset dir="WebContent"></fileset>
 		</war>
+		<echo message="${war.filename} successfully created"/>
+	</target>
+	<target name="deploy" description="deploy to tomcat">
+		<echo>deploying from client</echo>
+				<deploy 
+					url="${tomcat-manager-url}"
+					username="${tomcat-manager-username}"
+					password="${tomcat-manager-password}"
+					path="/${ant.project.name}"
+					war="build/${war.filename}"
+				/>
 	</target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
 </project>
