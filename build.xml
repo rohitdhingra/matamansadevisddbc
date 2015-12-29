@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="build" name="matamansadevisddbc">
+	<property file="build.properties"/> 
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
@@ -24,22 +25,22 @@
     </path>
     <path id="EAR Libraries.libraryclasspath"/>
     <path id="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath">
-        <pathelement location="/usr/share/tomcat7/lib/annotations-api.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/catalina-ant.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/catalina-ha.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/catalina-tribes.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/catalina.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/ecj-4.3.1.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/el-api.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/jasper-el.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/jasper.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/jsp-api.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/servlet-api.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/tomcat-coyote.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/tomcat-dbcp.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="/usr/share/tomcat7/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="${tomcat.libpath}/annotations-api.jar"/>
+        <pathelement location="${tomcat.libpath}/catalina-ant.jar"/>
+        <pathelement location="${tomcat.libpath}/catalina-ha.jar"/>
+        <pathelement location="${tomcat.libpath}/catalina-tribes.jar"/>
+        <pathelement location="${tomcat.libpath}/catalina.jar"/>
+        <pathelement location="${tomcat.libpath}/ecj-4.3.1.jar"/>
+        <pathelement location="${tomcat.libpath}/el-api.jar"/>
+        <pathelement location="${tomcat.libpath}/jasper-el.jar"/>
+        <pathelement location="${tomcat.libpath}/jasper.jar"/>
+        <pathelement location="${tomcat.libpath}/jsp-api.jar"/>
+        <pathelement location="${tomcat.libpath}/servlet-api.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-coyote.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-dbcp.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-i18n-es.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-i18n-fr.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-i18n-ja.jar"/>
     </path>
     <path id="MataMansaDeviProject.classpath">
         <path refid="Web App Libraries.libraryclasspath"/>
