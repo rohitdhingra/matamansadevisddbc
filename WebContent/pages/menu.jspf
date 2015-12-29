@@ -1,0 +1,30 @@
+<table width="100%" bgcolor="#F09050">
+ <tr>
+  <td align="center">   
+    <a href="Home.jsp" style="text-decoration:none"><font style="font-family:Mistral;" color="blue">HOME</font></a>   
+  </td>
+  <td align="center">   
+    <a href="108NamesOfMaaDurga1.jsp"
+       style="text-decoration:none"><font style="font-family:Mistral;" color="blue">108 NAMES</font></a>   
+  </td>
+  <td align="center">   
+    <a href="MemberLoginPage.jsp"
+       style="text-decoration:none"><font style="font-family:Mistral;" color="blue">MEMBERS LOGIN PAGE</font></a>   
+  </td>
+  <td align="center">   
+  <a href="BhandaraCommitteeMembers.jsp" style="text-decoration:none"><font style="font-family:Mistral;" color="blue">BHANDARA COMMITTEE MEMBERS</font></a>   
+  </td>
+  <td align="center">   
+    <a href="MataAppeal.jsp"
+       style="text-decoration:none"><font style="font-family:Mistral;" color="blue">MATA APPEAL</font></a>   
+  </td>
+  <td align="center">   
+    <a href="Snapshot.jsp"
+       style="text-decoration:none"><font style="font-family:Mistral;" color="blue">GALLERY</font></a>   
+  </td>  
+  <td align="center">   
+    <a href="ContactUs.jsp"
+       style="text-decoration:none"><font style="font-family:Mistral;" color="blue">CONTACT US</font></a>   
+  </td>
+ </tr>
+ </table>

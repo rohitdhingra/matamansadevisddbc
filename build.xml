@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="matamansadevisddbc">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/antlr.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-collections.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-dbcp-1.4-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-dbcp-1.4-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-dbcp-1.4.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-digester.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-fileupload.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-logging.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-pool-1.6-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-pool-1.6-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-pool-1.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-validator.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jakarta-oro.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/struts.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath">
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/annotations-api.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/catalina.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/ecj-4.3.1.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/el-api.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/jasper-el.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/jasper.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/jsp-api.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/servlet-api.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../../Softwares/apache-tomcat-6.0.44-windows-x64/apache-tomcat-6.0.44/lib/tomcat-i18n-ja.jar"/>
+    </path>
+    <path id="MataMansaDeviProject.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat v6.0 [Apache Tomcat v6.0].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="WebContent/WEB-INF/classes"/>
+        <copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
+            <fileset dir="src">
+                <exclude name="**/*.ucls"/>
+                <exclude name="**/*.useq"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="WebContent/WEB-INF/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project,package" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="MataMansaDeviProject.classpath"/>
+        </javac>
+    </target>
+	<target name="package">
+		<war destfile="build/MataMansaDeviSDBC.war" webxml="WebContent/WEB-INF/web.xml">
+			<fileset dir="WebContent"></fileset>
+		</war>
+	</target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+</project>

@@ -1,0 +1,19 @@
+<table width="100%">
+ <tr>
+  <td bgcolor="#F09050" align="center">
+   
+    <p>  
+      
+      <a href="http://webmail.matamansadevisdbc.com" style="text-decoration:none"><font size="4" face="Mistral" color="blue">Administrator Login</font></a>
+      |
+      <a href="mailto:admin@matamansadevisdbc.com" style="text-decoration:none"><font size="4" face="Mistral" color="blue">Mail to Administrator</font></a>
+      |
+      <a href="ContactUs.jsp" style="text-decoration:none"><font size="4" face="Mistral" color="blue">Contact Us</font></a>
+      </p>
+    <p>
+     <font size="-1">Copyright (c) 2008 MataMansaDevi Sewak Dal Bhandara
+                     Committee - http://www.matamansadevisdbc.com</font>
+    </p>
+  </td>
+ </tr>
+</table>

@@ -1,0 +1,37 @@
+<script type="text/javascript">
+<!--
+spe=500;
+na=document.all.tags("blink");
+swi=1;
+bringBackBlinky();
+function bringBackBlinky() {
+if (swi == 1) {
+sho="visible";
+swi=0;
+}
+else {
+sho="hidden";
+swi=1;
+}
+for(i=0;i<na.length;i++) {
+na[i].style.visibility=sho;
+}
+setTimeout("bringBackBlinky()", spe);
+}
+-->
+</script>
+
+<table width="100%">
+ <tr>
+  <td align="center">
+   <font color="red"><blink>&#2384; &#2358;&#2381;&#2352;&#2368; &#2350;&#2366;&#2340;&#2366; &#2350;&#2344;&#2360;&#2366; &#2342;&#2375;&#2357;&#2368; &#2344;&#2350;&#2307;</blink></font>
+  </td>
+  <td align="center">
+  <font color="red"><blink>&#2384; &#2358;&#2381;&#2352;&#2368; &#2350;&#2366;&#2340;&#2366; &#2350;&#2344;&#2360;&#2366; &#2342;&#2375;&#2357;&#2368; &#2344;&#2350;&#2307;</blink></font>
+  </td>
+  <td align="center">
+   <font color="red"><blink>&#2384; &#2358;&#2381;&#2352;&#2368; &#2350;&#2366;&#2340;&#2366; &#2350;&#2344;&#2360;&#2366; &#2342;&#2375;&#2357;&#2368; &#2344;&#2350;&#2307;</blink></font>
+  </td>
+ </tr>
+ </table>
+ 

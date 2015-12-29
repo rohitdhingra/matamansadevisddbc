@@ -1,0 +1,19 @@
+<form action="/matamansadevisddbc/Login.do" >
+<p>
+	<font color="#74C2E1">Username&nbsp;:</font><input type="text" name="userName" id="userName">
+	<br/>
+	<br/>
+	<font color="#74C2E1">Password&nbsp;&nbsp;:&nbsp;</font><input type="password" id="password" name="password">
+	<br/>
+	<br/>
+	<font color="#74C2E1">Membership Type&nbsp;&nbsp;:&nbsp;</font>
+	<select name="memberType" id="memberType">
+		<option value="Member">Member</option>
+		<option value="Admin">Admin</option>
+	</select>
+	<br/>
+	<br/>
+	<input type="submit" value="Login">
+<p>
+</form>
+
