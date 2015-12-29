@@ -64,7 +64,7 @@
         <delete dir="WebContent/WEB-INF/classes"/>
     </target>
     <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project,package,deploy" name="build"/>
+    <target depends="build-subprojects,build-project,package" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
