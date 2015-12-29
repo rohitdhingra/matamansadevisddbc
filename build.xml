@@ -26,7 +26,8 @@
     </path>
     <path id="EAR Libraries.libraryclasspath"/>
     <path id="tomcat.libraryclasspath">
-        <pathelement location="${tomcat.libpath}/annotations-api.jar"/>
+    	<pathelement location="${tomcat.libpath}/*.jar"/>
+        <!--pathelement location="${tomcat.libpath}/annotations-api.jar"/>
         <pathelement location="${tomcat.libpath}/catalina-ant.jar"/>
         <pathelement location="${tomcat.libpath}/catalina-ha.jar"/>
         <pathelement location="${tomcat.libpath}/catalina-tribes.jar"/>
@@ -41,7 +42,7 @@
         <pathelement location="${tomcat.libpath}/tomcat-dbcp.jar"/>
         <pathelement location="${tomcat.libpath}/tomcat-i18n-es.jar"/>
         <pathelement location="${tomcat.libpath}/tomcat-i18n-fr.jar"/>
-        <pathelement location="${tomcat.libpath}/tomcat-i18n-ja.jar"/>
+        <pathelement location="${tomcat.libpath}/tomcat-i18n-ja.jar"/-->
     </path>
     <path id="MataMansaDeviProject.classpath">
         <path refid="Web App Libraries.libraryclasspath"/>
