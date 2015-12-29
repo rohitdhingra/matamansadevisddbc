@@ -87,6 +87,7 @@
 					password="${tomcat-manager-password}"
 					path="/${ant.project.name}"
 					war="build/${war.filename}"
+					update="true"
 				/>
 	</target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
