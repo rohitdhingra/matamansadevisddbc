@@ -49,7 +49,6 @@
         <path refid="EAR Libraries.libraryclasspath"/>
         <path refid="tomcat.libraryclasspath"/>
     </path>
-	<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.libraryclasspath" />
     <target name="init">
         <mkdir dir="WebContent/WEB-INF/classes"/>
         <copy includeemptydirs="false" todir="WebContent/WEB-INF/classes">
@@ -78,9 +77,10 @@
 			<fileset dir="WebContent"></fileset>
 		</war>
 		<echo message="${war.filename} successfully created"/>
+		<antcall target="deploy"></antcall>
 	</target>
 	<target name="deploy" description="deploy to tomcat">
-		<echo>deploying from client</echo>
+		<!--echo>deploying from client</echo>
 				<deploy 
 					url="${tomcat-manager-url}"
 					username="${tomcat-manager-username}"
@@ -88,7 +88,16 @@
 					path="/${ant.project.name}"
 					war="build/${war.filename}"
 					update="true"
-				/>
+				/-->
+		<copy file="build/${war.filename}" todir="${tomcat.deploy}"></copy>
+		<antcall target="startTomcat"></antcall>
 	</target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	<target name="startTomcat">
+		<exec executable="${tomcat.home}/bin/startup.sh"></exec>
+	</target>
+	<target name="stopTomcat">
+		<exec executable="${tomcat.home}/bin/shutdown.sh"></exec>
+	</target>
+	
 </project>
