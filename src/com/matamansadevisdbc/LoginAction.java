@@ -21,11 +21,11 @@ public class LoginAction extends Action{
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		/*DataSource dataSource=null;
+		DataSource dataSource=null;
 		Connection connection=null;
-		dataSource = getDataSource(request);
-		connection = dataSource.getConnection();*/
-//		System.out.println(connection.toString());
+		dataSource = getDataSource(request,"loginDS");
+		connection = dataSource.getConnection();
+		System.out.println(connection.toString());
 		System.out.println("Inside Action Servlet================================");
 		LoginForm loginForm = (LoginForm) form;
 		System.out.println(loginForm.getMemberType() + loginForm.getUserName()+loginForm.getPassword());

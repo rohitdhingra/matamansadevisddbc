@@ -3,17 +3,17 @@
           "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
           "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
 <struts-config>
-	<!-- <data-sources>
-		<data-source type="org.apache.commons.dbcp.BasicDataSource">
+	<data-sources>
+		<data-source type="org.apache.commons.dbcp.BasicDataSource" key="loginDS">
 			<set-property value="com.mysql.jdbc.Driver" property="driverClassName" />
 			<set-property property="url"
-				value="jdbc:mysql://sql4.freesqldatabase.com:3306/sql458284" />
-			<set-property property="user" value="sql458284" />
-			<set-property property="password" value="rI4*gH4*" />
+				value="jdbc:mysql://192.168.192.48:3306/MataMansaDeviDB" />
+			<set-property property="user" value="rohit" />
+			<set-property property="password" value="password" />
 			<set-property value="1" property="maxActive"/>
 			<set-property value="1" property="maxIdle"/>
 		</data-source>
-	</data-sources> -->
+	</data-sources> 
 
 	<form-beans>
 		<form-bean name="LoginForm" type="com.matamansadevisdbc.LoginForm" />
