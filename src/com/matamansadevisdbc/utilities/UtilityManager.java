@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -39,5 +41,32 @@ public class UtilityManager {
 			e.printStackTrace();
 		}
 		return conn; 
+	}
+	public static String encryptPassword(String password)
+	{
+		String encryptedPassword =null;
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA1");
+			md.update(password.getBytes());
+			byte[] output = md.digest();
+			encryptedPassword = bytesToHex(output);			
+			
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return encryptedPassword;
+	}
+	private static String bytesToHex(byte[] b) {
+		// TODO Auto-generated method stub
+		char hexDigit[] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+		StringBuffer buf= new StringBuffer();
+		for(int j=0;j<b.length;j++)
+		{
+			buf.append(hexDigit[(b[j]>>4) & 0x0f]);
+			buf.append(hexDigit[b[j] & 0x0f]);
+			
+		}
+		return buf.toString();
 	}
 }
